@@ -2,6 +2,17 @@ import streamlit as st
 import numpy as np
 import pickle
 import pandas as pd
+import sklearn
+
+from sklearn.linear_model import LogisticRegression 
+from sklearn.neighbors import KNeighborsClassifier 
+from sklearn.tree import DecisionTreeClassifier, plot_tree
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.metrics import ConfusionMatrixDisplay 
+from sklearn.compose import make_column_transformer 
+from sklearn.pipeline import Pipeline
+from sklearn.linear_model import LinearRegression
 
 st.header('A Model for insurance costs')
 
