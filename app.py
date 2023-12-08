@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import pickle
 import pandas as pd
-import sklearn
 
 from sklearn.linear_model import LogisticRegression 
 from sklearn.neighbors import KNeighborsClassifier 
