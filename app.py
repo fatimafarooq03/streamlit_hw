@@ -3,7 +3,7 @@ import numpy as np
 import pickle
 import pandas as pd
 
-#st.header('A Model for insurance costs')
+st.header('A Model for insurance costs')
 
 st.write('Please enter the Age, Sex, BMI, number of children, smoking status, and region')
 
