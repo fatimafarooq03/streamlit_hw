@@ -14,8 +14,8 @@ region = st.selectbox('Region', ['southwest', 'northwest', 'southeast', 'northea
 X = pd.DataFrame([[age, sex, BMI, children, smoker, region]], columns=['age', 'sex', 'bmi', 'children', 'smoker', 'region'])
 
 # Debug: Check the type and structure of X
-st.write(type(X))
-st.write(X.head())
+# st.write(type(X))
+# st.write(X.head())
 
 # Ensure one-hot encoding (if required)
 X_encoded = pd.get_dummies(X, columns=['sex', 'smoker', 'region'])
