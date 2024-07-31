@@ -14,15 +14,17 @@ children = st.number_input('Number of Children')
 smoker = st.selectbox('Do you smoke?', ['yes', 'no'])  # Use a dropdown for categorical variable
 region = st.selectbox('Region', ['southwest', 'northwest','southeast','northeast'])
 
-# Create feature vector
-X = pd.DataFrame([[age, sex, BMI, children, smoker, region]], columns=['age', 'sex', 'bmi', 'children', 'smoker', 'region'])
 
-# Perform one-hot encoding for categorical variables
-X_encoded = pd.get_dummies(X, columns=['sex', 'smoker', 'region'])
+# Create feature vector
+X = np.array([[age, sex, BMI, children, smoker,region]])
+X = pd.DataFrame(X,columns=['age','sex','bmi','children','smoker','region'])
+
+
 
 with open('insurance_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
-pred = model.predict(X_encoded)
+pred = model.predict(X)
 
 st.write(f'The model predicts an insurance cost of $ {pred[0]}')
+ 
